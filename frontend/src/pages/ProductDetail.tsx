@@ -1335,14 +1335,16 @@ export default function ProductDetail() {
   const totalPrice = product.price + (withAddon ? product.addon.price : 0);
 
   const handleAddToCart = () => {
-    addToCart({
-      id: product.id,
-      name: `${product.title}${selectedCap ? " " + selectedCap : ""} ${selectedColor}`.trim(),
-      brand: product.brand,
-      price: totalPrice,
-      image: product.images[0],
-      color: [selectedCap, selectedColor].filter(Boolean).join(" | "),
-    });
+    for (let i = 0; i < qty; i++) {
+      addToCart({
+        id: product.id,
+        name: `${product.title}${selectedCap ? " " + selectedCap : ""} ${selectedColor}`.trim(),
+        brand: product.brand,
+        price: totalPrice,
+        image: product.images[0],
+        color: [selectedCap, selectedColor].filter(Boolean).join(" | "),
+      });
+    }
   };
 
   const handleBuyNow = () => {
@@ -1375,8 +1377,8 @@ export default function ProductDetail() {
                   alt={product.title}
                   className="w-full h-96 object-contain p-6"
                   onError={(e) =>
-                    ((e.target as HTMLImageElement).src =
-                      "https://placehold.co/400x400?text=No+Image")
+                  ((e.target as HTMLImageElement).src =
+                    "https://placehold.co/400x400?text=No+Image")
                   }
                 />
                 <div className="bg-orange-400 px-6 py-3 flex items-center gap-3">
@@ -1404,8 +1406,8 @@ export default function ProductDetail() {
                       alt={`thumb-${i}`}
                       className="w-full h-full object-contain"
                       onError={(e) =>
-                        ((e.target as HTMLImageElement).src =
-                          "https://placehold.co/80x80?text=img")
+                      ((e.target as HTMLImageElement).src =
+                        "https://placehold.co/80x80?text=img")
                       }
                     />
                   </button>
@@ -1492,11 +1494,10 @@ export default function ProductDetail() {
                         onClick={() => setSelectedColor(c.name)}
                         title={c.name}
                         style={{ backgroundColor: c.hex }}
-                        className={`w-9 h-9 rounded-full border-4 transition ${
-                          selectedColor === c.name
-                            ? "border-gray-900 scale-110"
-                            : "border-gray-200 hover:border-gray-400"
-                        }`}
+                        className={`w-9 h-9 rounded-full border-4 transition ${selectedColor === c.name
+                          ? "border-gray-900 scale-110"
+                          : "border-gray-200 hover:border-gray-400"
+                          }`}
                       />
                     ))}
                   </div>
