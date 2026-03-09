@@ -75,7 +75,7 @@ const CartPage = () => {
                   </span>
 
                   {/* Quantity */}
-                  <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <div className="inline-flex items-center border border-gray-200 rounded-lg overflow-hidden w-fit">
 
                     <button
                       className="w-8 h-8 bg-gray-50 hover:bg-gray-100 flex items-center justify-center"
