@@ -9,8 +9,7 @@ function Home() {
     "/img/Promotion2.jpg",
     "/img/Promotion3.jpg",
     "/img/Promotion4.jpg",
-    "/img/Promotion5.jpg",
-    "/img/Promotion6.jpg",
+    "/img/Promotion5.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
