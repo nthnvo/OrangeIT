@@ -174,9 +174,7 @@ function Navbar() {
 
           {/* SEARCH — hidden on mobile */}
           <div className="hidden md:flex flex-1 max-w-2xl items-center gap-3 mx-4 relative" ref={searchRef}>
-            <select className="rounded-lg px-3 py-2 text-sm border border-gray-200 flex-shrink-0">
-              <option>ทั้งหมด</option>
-            </select>
+            
             <SearchInput />
           </div>
 
